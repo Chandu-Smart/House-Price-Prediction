@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOUSE PRICE PREDICTION</title>
+    <style>
+        .center {
+            margin-bottom: 0.2cm;
+        }
+
+        input {
+            padding-left: 0.2cm;
+        }
+
+        label {
+            display: inline-block;
+            width: 6rem;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <header>
+            <h1>
+                HOUSE PRICE PREDICTION
+            </h1>
+        </header>
+        <main>
+
+            <form action="result" method="post">
+                {% csrf_token %}
+                <label for="bedrooms">bedrooms</label>
+                <input type="number" id="bedrooms" name="bedrooms" class="center" placeholder="3,4,5"
+                    required="required"><br>
+
+                <label for="bathrooms">bathrooms</label>
+                <input type="numbert" id="bathrooms" name="bathrooms" class="center" placeholder="1.0,2.5"
+                    required="required"><br>
+
+                <label for="sqft_living">sqft_living</label>
+                <input type="number" id="sqft_living" name="sqft_living" class="center" placeholder="1570,1780"
+                    required="required"><br>
+
+                <label for="sqft_lot">sqft_lot</label>
+                <input type="number" id="sqft_lot" name="sqft_lot" class="center" placeholder="5510,7079"
+                    required="required"><br>
+
+                <label for="floors">floors</label>
+                <input type="number" id="floors" name="floors" class="center" placeholder="1.0,2.0"
+                    required="required"><br>
+
+                <label for="waterfront">waterfront</label>
+                <input type="number" id="waterfront" name="waterfront" class="center" placeholder="0"
+                    required="required"><br>
+
+                <label for="view">view</label>
+                <input type="number" id="view" name="view" class="center" placeholder="0" required="required"><br>
+
+                <label for="condition">condition</label>
+                <input type="number" id="condition" name="condition" class="center" placeholder="3,4"
+                    required="required"><br>
+
+                <label for="sqft_above">sqft_above</label>
+                <input type="number" id="sqft_above" name="sqft_above" class="center" placeholder="1070,2210"
+                    required="required"><br>
+
+                <label for="sqft_basement">sqft_basement</label>
+                <input type="number" id="sqft_basement" name="sqft_basement" class="center" placeholder="500,560"
+                    required="required"><br>
+
+                <label for="yr_built">year_built</label>
+                <input type="number" id="yr_built" name="yr_built" class="center" placeholder="1940,2000"
+                    required="required"><br>
+
+                <label for="yr_renovated">year_renovated</label>
+                <input type="number" id="yr_renovated" name="yr_renovated" class="center" placeholder="0"
+                    required="required"><br>
+
+                <label for="lat">latitude</label>
+                <input type="number" id="lat" name="lat" class="center" placeholder="47.6942, 47.3800"
+                    required="required"><br>
+
+                <label for="long">longitude</label>
+                <input type="number" id="long" name="long" class="center" placeholder="-122.319, -122.362"
+                    required="required"><br>
+
+                <label for="sqft_lot15">sqft_lot15</label>
+                <input type="number" id="sqft_lot15" name="sqft_lot15" class="center" placeholder="6830, 19000"
+                    required="required"><br>
+
+                <input type="submit" value="PREDICT">
+            </form>
+            <h1>{{result}}</h1>
+    </center>
+    </main>
+</body>
+
+</html>
+
+<!-- ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors',
+       'waterfront', 'view', 'condition', 'sqft_above', 'sqft_basement',
+       'yr_built', 'yr_renovated', 'lat', 'long', 'sqft_lot15'] -->
